@@ -17,4 +17,5 @@ export const TUNING = {
     // Ataque do guarda; o windup é o telegraph.
     guardSlash: { id: 'guardSlash', windupMs: 500, activeMs: 120, recoveryMs: 450, damage: 25, staminaCost: 0, reach: 24 },
   },
+  guard: { hp: 60, aggroRange: 140, attackRange: 26, walkSpeed: 45, chaseSpeed: 70, recoverMs: 400, hurtMs: 220, attackCooldownMs: 900 },
 } as const;
