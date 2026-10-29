@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { GAME_WIDTH, GAME_HEIGHT } from './config/game';
 import { TUNING } from './config/tuning';
 import { BootScene } from './scenes/BootScene';
+import { HudScene } from './scenes/HudScene';
 
 declare global {
   interface Window {
@@ -25,7 +26,7 @@ const game = new Phaser.Game({
     autoCenter: Phaser.Scale.CENTER_BOTH,
     autoRound: true,
   },
-  scene: [BootScene],
+  scene: [BootScene, HudScene],
 });
 
 // Exposto para os testes e2e (Playwright).
