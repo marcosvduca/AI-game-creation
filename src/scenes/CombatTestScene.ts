@@ -8,7 +8,7 @@ import { DeviceInput } from '../input/devices';
 import { registerHit } from '../systems/attack';
 import { onEnemyHit } from '../systems/enemyAI';
 import { overlaps } from '../systems/hitbox';
-import { isInvulnerable, onHit } from '../systems/playerState';
+import { blocksBodies, isInvulnerable, onHit } from '../systems/playerState';
 import { clampDt } from '../systems/time';
 import { PLAYER_CHANGED, PLAYER_DIED, type PlayerChangedPayload } from '../types/events';
 
@@ -50,6 +50,9 @@ export class CombatTestScene extends Phaser.Scene {
     this.enemy = new Enemy(this, 'guard-1', ENEMY_START.x, ENEMY_START.y);
     this.physics.add.collider(this.player.sprite, solids);
     this.physics.add.collider(this.enemy.sprite, solids);
+    this.physics.add.collider(this.player.sprite, this.enemy.sprite, undefined, () =>
+      blocksBodies(this.player.core) && this.enemy.core.mode !== 'dead',
+    );
 
     this.cameras.main.setBounds(0, 0, GAME_WIDTH, GAME_HEIGHT).startFollow(this.player.sprite, true);
     this.setDebug(this.registry.get(DEBUG_KEY) === true);

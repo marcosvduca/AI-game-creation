@@ -124,6 +124,11 @@ export function isInvulnerable(p: PlayerCore): boolean {
   return p.mode === 'dodge' && p.modeMs >= TUNING.dodge.iframeStartMs && p.modeMs < TUNING.dodge.iframeEndMs;
 }
 
+// A esquiva atravessa o inimigo; andando, o corpo do jogador bloqueia o dele.
+export function blocksBodies(p: PlayerCore): boolean {
+  return p.mode !== 'dodge' && p.mode !== 'dead';
+}
+
 export function onHit(p: PlayerCore, damage: number): PlayerCore {
   if (p.mode === 'dead') return p;
 

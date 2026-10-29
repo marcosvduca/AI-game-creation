@@ -30,6 +30,8 @@ export class Enemy {
     scene.physics.add.existing(this.sprite);
     this.body = this.sprite.body as Phaser.Physics.Arcade.Body;
     this.body.setCollideWorldBounds(true);
+    // O jogador esbarra no guarda, mas não o empurra.
+    this.body.pushable = false;
     this.hitboxGfx = scene.add.graphics();
     this.bang = scene.add
       .text(x, y, '!', { fontFamily: 'monospace', fontSize: '14px', color: '#ff2020' })

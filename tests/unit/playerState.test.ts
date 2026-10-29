@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createPlayerCore, isInvulnerable, onHit, stepPlayer } from '../../src/systems/playerState';
+import { blocksBodies, createPlayerCore, isInvulnerable, onHit, stepPlayer } from '../../src/systems/playerState';
 import type { Action } from '../../src/types/input';
 
 const S = (...a: Action[]) => new Set(a);
@@ -93,5 +93,11 @@ describe('playerState', () => {
   });
   it('vira para o lado segurado em free', () => {
     expect(stepPlayer(createPlayerCore(), S(), S('left'), 16).facing).toBe(-1);
+  });
+  it('corpo bloqueia o inimigo, exceto na esquiva e morto', () => {
+    expect(blocksBodies(createPlayerCore())).toBe(true);
+    expect(blocksBodies(stepPlayer(createPlayerCore(), S('attack'), S(), 16))).toBe(true);
+    expect(blocksBodies(stepPlayer(createPlayerCore(), S('dodge'), S(), 16))).toBe(false);
+    expect(blocksBodies(onHit(createPlayerCore(), 999))).toBe(false);
   });
 });
