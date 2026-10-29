@@ -14,5 +14,6 @@ export class BootScene extends Phaser.Scene {
         color: '#00f0ff',
       })
       .setOrigin(0.5);
+    this.scene.start('CombatTest');
   }
 }

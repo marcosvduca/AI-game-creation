@@ -10,6 +10,8 @@ export const TUNING = {
   inputBufferMs: 150,
   maxDtMs: 50,
   hitstopMs: 60,
+  // Tremida de câmera (intensidade relativa ao tamanho da tela) e desaceleração do knockback.
+  feel: { shakeMs: 90, shakeOnEnemyHit: 0.004, shakeOnPlayerHit: 0.01, knockbackDrag: 600, deathRestartMs: 2000 },
   knockback: { player: 140, enemy: 120 },
   player: { runSpeed: 110, jumpVelocity: -330, hurtMs: 250 },
   attacks: {
