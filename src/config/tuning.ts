@@ -11,7 +11,7 @@ export const TUNING = {
   maxDtMs: 50,
   hitstopMs: 60,
   knockback: { player: 140, enemy: 120 },
-  player: { runSpeed: 110, jumpVelocity: -330 },
+  player: { runSpeed: 110, jumpVelocity: -330, hurtMs: 250 },
   attacks: {
     katanaLight: { id: 'katanaLight', windupMs: 220, activeMs: 100, recoveryMs: 320, damage: 22, staminaCost: 20, reach: 26 },
     // Ataque do guarda; o windup é o telegraph.
