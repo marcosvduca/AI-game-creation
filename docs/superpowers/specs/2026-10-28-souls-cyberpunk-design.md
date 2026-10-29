@@ -73,6 +73,14 @@ Também é decisão do usuário que **não se simplifica uma mecânica obrigató
 
 Por isso, o plano começa com uma **auditoria de assets**: um mapa do que cada animação ou personagem precisa contra o que os packs escolhidos oferecem, com a solução (1, 2 ou 3) para cada lacuna. Essa auditoria é feita antes da produção do chefe, dos inimigos e das classes.
 
+### 5.1.1 Arte escolhida (aprovada pelo usuário em 2026-10-28)
+
+Resultado da auditoria (`docs/assets-audit.md`), aprovado pelo usuário:
+
+- **Classes:** Samurai = Punk, Pistoleiro = Cyborg (com **braço-canhão** que dispara energia, em vez de pistola), Brutamontes = Biker.
+- **Chefe:** o **mech quadrúpede** do pack "Bosses Pixel Art"; o ciborgue pesado (inimigo comum) deriva de outro chefe do mesmo pack, editado.
+- **Lacunas** (esquiva, bloqueio e cura das 3 classes, katana do Samurai, efeitos): **desenhadas à mão** pela Paleta; arte gerada por IA só como último recurso.
+
 ### 5.2 Playtest com aprovação (decisão do usuário)
 
 O usuário vai testar a sensação do combate durante o desenvolvimento. Existe um **portão obrigatório**:
