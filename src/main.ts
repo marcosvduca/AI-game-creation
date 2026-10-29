@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { GAME_WIDTH, GAME_HEIGHT } from './config/game';
+import { TUNING } from './config/tuning';
 import { BootScene } from './scenes/BootScene';
 
 declare global {
@@ -17,8 +18,7 @@ const game = new Phaser.Game({
   backgroundColor: '#0a0a12',
   physics: {
     default: 'arcade',
-    // Provisório: a Task 2 troca por TUNING.world.gravity.
-    arcade: { gravity: { x: 0, y: 900 } },
+    arcade: { gravity: { x: 0, y: TUNING.world.gravity } },
   },
   scale: {
     mode: Phaser.Scale.FIT,
